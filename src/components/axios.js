@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: 'https://harrycrosby.onrender.com/',
+  baseURL: 'https://harrycrosby.onrender.com',
 });
