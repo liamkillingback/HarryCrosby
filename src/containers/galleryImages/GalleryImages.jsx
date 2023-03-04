@@ -18,7 +18,7 @@ const GalleryImages = () => {
 
   const getimages = async () => {
     try {
-      await axios.post(IMAGES_URL, { genre: genre }).then((res) => {
+      await axios.get(IMAGES_URL, { genre: genre }).then((res) => {
         var data = res.data;
         console.log(data);
         dispatch(setImages({ images: data }));
