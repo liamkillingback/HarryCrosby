@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.post('/login', login);
 router.post('/register', register);
-router.post('/gallery_images', get_images);
+router.get('/gallery_images', get_images);
 
 
 export default router;
