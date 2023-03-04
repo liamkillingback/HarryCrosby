@@ -1,0 +1,35 @@
+.addImages__container {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('../assets/gallery_background.JPG');
+  background-size: cover;
+}
+.addImages__form {
+  padding-top: 6rem;
+
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.addImages__genre {
+    display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.addImages__selector {
+  font-family: 'pacificacondensed';
+  height: 3rem;
+  font-size: 2rem;
+}
+/* .addImages__selections {
+} */
+.addImages__label {
+  color: white;
+  font-size: 4rem;
+  margin-right: 2rem;
+}

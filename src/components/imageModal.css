@@ -1,0 +1,31 @@
+.gallery__image_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 22;
+    background-color: rgba(1, 1, 1, 0.5);
+    
+}
+.gallery__modal_image {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 21;
+    
+    
+}
+.gallery__modal_img {
+    animation: fadeIn 1s;
+    width: 70%;
+    z-index: 42;
+}
+
+@media screen and (max-width: 800px) {
+    .gallery__modal_img {
+        width: 95%;
+    }
+}

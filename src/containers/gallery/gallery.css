@@ -1,0 +1,43 @@
+.gallery__container {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('../../assets/gallery_background.JPG');
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 7rem;
+}
+
+.gallery__genres {
+  height: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.gallery__genres_label {
+  margin-top: 6rem;
+  z-index: 10;
+  color: white;
+  text-decoration: none;
+  font-size: 5vw;
+  cursor: pointer;
+  transition: 1s;
+
+}
+.gallery__genres > label:hover {
+  transition: 1s;
+  color: yellow;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.gallery__img {
+  animation: fadeIn 5s;
+  transition: 0.3s ease-in-out;
+}
+.gallery__img:hover {
+  opacity: 0.5;
+  transition: 0.3s ease-in-out;
+}

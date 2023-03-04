@@ -1,24 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import {
+  GalleryPage,
+  Home,
+  ContactPage,
+  AnimationPage,
+  LoginPage,
+  ProfilePage,
+  RegisterPage,
+  AddImagesPage,
+  Layout,
+} from './components';
+
+// import pages
+import { Navbar, Footer } from './containers';
 
 function App() {
+const isAuth = Boolean(useSelector((state) => state.token));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route path='/' element={<Home />} />
+            <Route path='/Gallery' element={<GalleryPage />} />
+            <Route path='/Contact' element={<ContactPage />} />
+            <Route path='/Animation' element={<AnimationPage />} />
+            <Route
+              path='/Profile'
+              element={isAuth ? <ProfilePage /> : <Navigate to='/Login' />}
+            />
+            <Route path='/Login' element={<LoginPage />} />
+            <Route path='/Register' element={<RegisterPage />} />
+            <Route path='/addImages' element={<AddImagesPage />} />
+          </Route>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
   );
 }
 

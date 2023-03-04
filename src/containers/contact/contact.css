@@ -1,0 +1,101 @@
+.contact__container {
+  padding-top: 8rem;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+    url("../../assets/contact_backdrop.JPG");
+  background-size: cover;
+}
+.contact__header {
+  font-size: 4rem;
+  color: white;
+  text-align: left;
+  margin-left: 4rem;
+}
+.contact__header span {
+  font-size: 5rem;
+}
+.contact__form {
+  min-height: 500px;
+  width: 80%;
+  border-radius: 1rem;
+  position: relative;
+  background-color: rgba(25, 25, 37, 0);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.contact__form_inputs {
+  padding-top: 2rem;
+  max-height: 550px;
+  width: 70%;
+  border-radius: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.form-control {
+  color: white;
+  font-family: "pacificacondensed";
+  letter-spacing: 0.1em;
+  background-color: rgba(0, 0, 0, 0.733);
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  padding-left: 1rem;
+  width: 90%;
+  height: 3rem;
+  border: none;
+  border-radius: 1rem;
+  margin: 1rem;
+  margin-left: 3rem;
+}
+.contact__form-btn {
+  cursor: pointer;
+  margin-left: 3.1rem;
+  color: rgb(0, 0, 0);
+  font-family: "pacificacondensed";
+  letter-spacing: 0.1em;
+  font-size: 2rem;
+  width: 10rem;
+  height: 4rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+}
+.contact__form-btn:hover {
+  background-color: rgb(155, 147, 39);
+  transition: 0.5s;
+}
+.form-control-textarea {
+  height: 20rem;
+  justify-content: start;
+}
+.contact__form_img {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__form_img img {
+  width: 80%;
+  height: 90%;
+  padding-right: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .contact__header {
+    font-size: 2rem;
+  }
+  .contact__header span {
+    font-size: 3rem;
+  }
+  .contact__form_inputs {
+    width: 100%;
+  }
+  .form-control {
+    font-size: 1.3rem;
+    height: 3rem;
+    margin-left: 1rem;
+  }
+  .form-control-textarea {
+    height: 20rem;
+  }
+}

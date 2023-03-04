@@ -1,0 +1,98 @@
+.carousel {
+  z-index: -1;
+  overflow: hidden;
+}
+.carousel__header {
+  top: 8rem;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.1em;
+  font-size: 4rem;
+  position: absolute;
+}
+.carousel__header > span{
+  transition: 3s;
+}
+.carousel__header > span:hover {
+  color: rgb(221, 224, 44);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.carousel__inner {
+  z-index: -1;
+  white-space: nowrap;
+  transition: transform 0.3s;
+}
+.carousel__item {
+  z-index: -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: green;
+  color: white;
+}
+.carousel__indicators {
+  width: 100vw;
+  top: 50vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+.indicators {
+  background-color: rgba(255, 255, 255, 0);
+  width: 2rem;
+  height: 2rem;
+  border-color: white;
+  border-radius: 50%;
+  position: relative;
+  top: 40vh;
+  margin: 1rem;
+}
+.carousel__right_btn {
+  display: none;
+  position: absolute;
+  left: 10px;
+}
+.carousel__left_btn {
+  display: none;
+  position: absolute;
+  right: 20px;
+}
+button {
+  margin: 5px;
+}
+button#active {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgb(49, 47, 47);
+}
+#Item1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+    url("../../assets/img1.JPG");
+  background-size: cover;
+}
+#Item2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+    url("../../assets/img2.JPG");
+  background-size: cover;
+  background-position: 100vw;
+}
+#Item3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+    url("../../assets/img3.JPG");
+  background-size: cover;
+}
+@media screen and (max-width: 1000px) {
+  #Item1 {
+    background-position: 100vh;
+  }
+  #Item2 {
+    background-position: 100vh;
+  }
+  #Item3 {
+    background-position: 100vh;
+  }
+}

@@ -1,0 +1,82 @@
+.login__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+    url("../assets/login_img.JPG");
+  height: 90vh;
+  background-size: cover;
+  background-position-y: 80%;
+}
+.login__container > h1 {
+  text-align: center;
+  font-size: 4rem;
+  color: white;
+  letter-spacing: 0.1em;
+}
+.login__container > form > label > p {
+  color: white;
+  font-size: 2rem;
+}
+.login__inputs {
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: 0.1em;
+  background-color: rgba(0, 0, 0, 0.733);
+  font-size: 1.5rem;
+  width: 100%;
+  height: 3rem;
+  border: none;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  text-transform: none;
+}
+.login__form {
+    width: 40%;
+}
+.login__form-btn {
+  cursor: pointer;
+  
+  color: rgb(0, 0, 0);
+  font-family: "pacificacondensed";
+  letter-spacing: 0.1em;
+  font-size: 2rem;
+  width: 10rem;
+  height: 4rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+}
+.login__form-btn:hover {
+  background-color: rgb(155, 147, 39);
+  transition: 0.5s;
+}
+p {
+  color: white;
+  font-size: 2rem;
+  
+}
+a {
+  color: rgb(163, 155, 155);
+}
+
+label {
+  color: white;
+  font-size: 2rem;
+}
+@media screen and (max-width: 750px) {
+  .login__container {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+      url("../assets/login_img.JPG");
+    background-size: auto;
+    background-position-x: center;
+  }
+  .login__container > h1 {
+    font-size: 2.5rem;
+  }
+  .login__form {
+    width: 60%;
+  }
+  
+}

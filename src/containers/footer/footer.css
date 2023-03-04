@@ -1,0 +1,13 @@
+.footer__container {
+    height: 8rem;
+    padding-left: 10rem;
+    
+}
+.footer__links {
+    margin: 2rem;
+}
+.footer__info {
+    margin-left: 2rem;
+    width: 200px;
+    color: rgb(172, 171, 171);
+}

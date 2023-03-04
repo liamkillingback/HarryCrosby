@@ -1,0 +1,28 @@
+.gallery__image > img {
+    width: 95%;
+    cursor: pointer;
+}
+
+.gallery__photos {
+    padding-top: 7rem;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20px, 30%));
+    
+    
+}
+.gallery__image {
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+.gallery__modal_image {
+    z-index: 200;
+}
+@media screen and (max-width: 800px) {
+    .gallery__photos {
+        padding-top: 3rem;
+        transition: 1s;
+    }
+}
