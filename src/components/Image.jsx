@@ -19,12 +19,12 @@ const Image = ({ imagePath, _id }) => {
   const BaseImage = () => {
     return (
       <div key={_id} className='gallery__image'>
-        {isAdmin? <span className='image__delete-btn'>&times;</span> : null}
+        {isAdmin ? <span className='image__delete-btn'>&times;</span> : null}
         <img
           className='gallery__img'
           onClick={setModalState}
           id={_id}
-          src={`http://localhost:3001/assets/${imagePath}`}
+          src={`https://harry-crosby.onrender.com/static/media/${imagePath}`}
           alt='404 not found'
         />
       </div>
@@ -34,10 +34,11 @@ const Image = ({ imagePath, _id }) => {
     return ReactDOM.createPortal(
       <div className={showModal}>
         <div className='gallery__modal_image'>
-          <img className='gallery__modal_img'
+          <img
+            className='gallery__modal_img'
             onClick={setModalState}
             id={_id}
-            src={`http://localhost:3001/assets/${imagePath}`}
+            src={`https://harry-crosby.onrender.com/static/media/${imagePath}`}
             alt='404'
           />
         </div>

@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import './addImages.css';
 import Dropzone from 'react-dropzone-uploader';
 import 'react-dropzone-uploader/dist/styles.css';
-import axios from './axios';
-const IMG_URL = '/auth/upload';
 
 const AddImagesPage = () => {
   const [selectedGenre, setSelectedGenre] = useState('');
 
   // specify upload params and url for your files
   const getUploadParams = async ({ file, meta }) => { 
-    return { url: `http://localhost:3001/auth/upload/${selectedGenre}` };
+    return {
+      url: `https://harry-crosby.onrender.com/auth/upload/${selectedGenre}`,
+    };
   };
 
   // called every time a file's `status` changes

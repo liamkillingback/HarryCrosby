@@ -17,7 +17,7 @@ import {
 import { Navbar, Footer } from './containers';
 
 function App() {
-const isAuth = Boolean(useSelector((state) => state.token));
+  const isAuth = Boolean(useSelector((state) => state.token));
 
   return (
     <>
@@ -35,7 +35,10 @@ const isAuth = Boolean(useSelector((state) => state.token));
             />
             <Route path='/Login' element={<LoginPage />} />
             <Route path='/Register' element={<RegisterPage />} />
-            <Route path='/addImages' element={<AddImagesPage />} />
+            <Route
+              path='/addImages'
+              element={isAuth ? <AddImagesPage /> : <Navigate to='/' />}
+            />
           </Route>
         </Routes>
         <Footer />
