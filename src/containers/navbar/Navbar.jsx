@@ -112,15 +112,14 @@ const Navbar = () => {
           Animation
         </a>
         <a
-          onClick={() =>
-            SetMobile((mobile) =>
-              mobile === 'navbar__smaller_hide'
-                ? 'navbar__smaller'
-                : 'navbar__smaller_hide'
-            )
-          }
-          className='navbar__nav-links'
-          href='/Login'
+          className={isAuth ? 'navbar__nav-link' : 'navbar__nav-link hide'}
+          onClick={() => dispatch(setLogout())}
+        >
+          Logout
+        </a>
+        <a
+          className={isAuth ? 'navbar__nav-link hide' : 'navbar__nav-link'}
+          href='/login'
         >
           Login
         </a>

@@ -5,6 +5,7 @@ import { setImages } from '../../state';
 import axios from '../../components/axios';
 import { Image } from "../../components"
 import ReactDOM from 'react-dom';
+import CloudinaryUploadWidget from '../../components/UploadWidget';
 
 const IMAGES_URL = '/auth/gallery_images';
 
@@ -14,13 +15,13 @@ const GalleryImages = () => {
   const images = useSelector((state) => state.images);
   const dispatch = useDispatch();
   const [genre, setGenre] = useState("all");
-
-
+  const genres = ['all', 'birds', 'people', 'misc'];
   const getimages = async () => {
     try {
-      await axios.get(IMAGES_URL, { genre: genre }).then((res) => {
+      await axios.post(IMAGES_URL, { genre: genre }).then((res) => {
         var data = res.data;
         console.log(data);
+        console.log(genre);
         dispatch(setImages({ images: data }));
       }); 
     } catch (error) {
@@ -33,7 +34,7 @@ const GalleryImages = () => {
   const AddImages = () => {
     if (isAdmin) {
       return (
-        <a className='gallery__genres_label' href="/addImages">+</a>
+        <CloudinaryUploadWidget currentPage={genre} />
       )
     }
     else return null;
@@ -42,13 +43,37 @@ const GalleryImages = () => {
   const Titles = () => {
     return ReactDOM.createPortal(
       <div className='gallery__genres'>
-        <label className='gallery__genres_label' onClick={() => setGenre('all')}>all</label>
-        <label className='gallery__genres_label' onClick={() => setGenre('birds')}>birds</label>
-        <label className='gallery__genres_label' onClick={() => setGenre('people')}>people</label>
-        <label className='gallery__genres_label' onClick={() => setGenre('misc')}>misc</label>
+        <label
+          id={genre === genres[0] ? 'highlight' : null}
+          className='gallery__genres_label'
+          onClick={() => setGenre('all')}
+        >
+          all
+        </label>
+        <label
+          id={genre === genres[1] ? 'highlight' : null}
+          className='gallery__genres_label'
+          onClick={() => setGenre('birds')}
+        >
+          birds
+        </label>
+        <label
+          id={genre === genres[2] ? 'highlight' : null}
+          className='gallery__genres_label'
+          onClick={() => setGenre('people')}
+        >
+          people
+        </label>
+        <label
+          id={genre === genres[3] ? 'highlight' : null}
+          className='gallery__genres_label'
+          onClick={() => setGenre('misc')}
+        >
+          misc
+        </label>
         <AddImages />
       </div>,
-       document.getElementById('App')
+      document.getElementById('App')
     );
   }
 

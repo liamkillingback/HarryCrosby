@@ -9,6 +9,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import axios from 'axios';
 import path from 'path';
+import cloudinary from 'cloudinary';
 import { fileURLToPath } from 'url';
 //import authRoutes from './routes/auth.js';
 //import userRoutes from './routes/users.js';
@@ -17,10 +18,16 @@ import Image from './models/Image.js';
 import authRoutes from './routes/auth.js';
 
 //Configurations
+dotenv.config();
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+  secure: true
+})
 const jsonParser = bodyParser.json();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(helmet());

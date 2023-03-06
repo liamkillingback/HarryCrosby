@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './imageModal.css';
 import ReactDOM from 'react-dom';
 import { useSelector } from 'react-redux';
+import axios from './axios';
+
+const DEL_URL = '/auth/delete_img';
 
 const Image = ({ imagePath, _id }) => {
   const [showModal, setShowModal] = useState('gallery__image_container hide');
@@ -16,15 +19,25 @@ const Image = ({ imagePath, _id }) => {
     );
   };
 
+  const handleDelete = async () => {
+    const response = await axios.delete(DEL_URL, {
+      data: {
+        _id: _id
+      }
+    })
+     
+    console.log(response);
+  }
+
   const BaseImage = () => {
     return (
       <div key={_id} className='gallery__image'>
-        {isAdmin ? <span className='image__delete-btn'>&times;</span> : null}
+        {isAdmin? <span onClick={() => handleDelete()} className='image__delete-btn'>&times;</span> : null}
         <img
           className='gallery__img'
           onClick={setModalState}
           id={_id}
-          src={`https://harry-crosby.onrender.com/static/media/${imagePath}`}
+          src={`${imagePath}`}
           alt='404 not found'
         />
       </div>
@@ -34,11 +47,10 @@ const Image = ({ imagePath, _id }) => {
     return ReactDOM.createPortal(
       <div className={showModal}>
         <div className='gallery__modal_image'>
-          <img
-            className='gallery__modal_img'
+          <img className='gallery__modal_img'
             onClick={setModalState}
             id={_id}
-            src={`https://harry-crosby.onrender.com/static/media/${imagePath}`}
+            src={`${imagePath}`}
             alt='404'
           />
         </div>

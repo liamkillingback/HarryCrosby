@@ -20,6 +20,10 @@
 .gallery__modal_image {
     z-index: 200;
 }
+#highlight {
+    color: yellow;
+    transition: 0.5s;
+}
 @media screen and (max-width: 800px) {
     .gallery__photos {
         padding-top: 3rem;

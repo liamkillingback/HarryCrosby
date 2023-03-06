@@ -7,7 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from './axios';
 import './register.css';
-
+import { Navigate } from 'react-router-dom';
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -89,14 +89,8 @@ const Register = () => {
 
   return (
     <>
-      {success ? (
-        <section>
-          <h1>Success!</h1>
-          <p>
-            <a href='/Login'>Sign In</a>
-          </p>
-        </section>
-      ) : (
+      {success ? 
+      <Navigate to='/'/> : (
         <section className='register__container'>
           <p
             ref={errRef}

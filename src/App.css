@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: 'pacificacondensed';
 }
+html, body {width: auto!important; overflow-x: hidden!important}
 @font-face {
   font-family: 'pacificacondensed';
   src: url('./assets/pacifica_condensed_regular-webfont.woff2') format('woff2'),
