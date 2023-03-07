@@ -24,18 +24,20 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route path='/' element={<Home />} />
-            <Route path='/Gallery' element={<GalleryPage />} />
-            <Route path='/Contact' element={<ContactPage />} />
-            <Route path='/Animation' element={<AnimationPage />} />
+          <Route exact path='/' element={<Layout />}>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/Gallery' element={<GalleryPage />} />
+            <Route exact path='/Contact' element={<ContactPage />} />
+            <Route exact path='/Animation' element={<AnimationPage />} />
             <Route
+              exact
               path='/Profile'
               element={isAuth ? <ProfilePage /> : <Navigate to='/Login' />}
             />
-            <Route path='/Login' element={<LoginPage />} />
-            <Route path='/Register' element={<RegisterPage />} />
+            <Route exact path='/Login' element={<LoginPage />} />
+            <Route exact path='/Register' element={<RegisterPage />} />
             <Route
+              exact
               path='/addImages'
               element={isAuth ? <AddImagesPage /> : <Navigate to='/' />}
             />
