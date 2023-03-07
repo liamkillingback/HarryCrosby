@@ -24,63 +24,13 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route
-            exact
-            path='https://harrycrosby.onrender.com/'
-            element={<Layout />}
-          >
-            <Route
-              exact
-              path='https://harrycrosby.onrender.com/'
-              element={<Home />}
-            />
-            <Route
-              exact
-              path='https://harrycrosby.onrender.com/Gallery'
-              element={<GalleryPage />}
-            />
-            <Route
-              exact
-              path='https://harrycrosby.onrender.com/Contact'
-              element={<ContactPage />}
-            />
-            <Route
-              exact
-              path='https://harrycrosby.onrender.com/Animation'
-              element={<AnimationPage />}
-            />
-            <Route
-              exact
-              path='https://harrycrosby.onrender.com/Profile'
-              element={
-                isAuth ? (
-                  <ProfilePage />
-                ) : (
-                  <Navigate to='https://harrycrosby.onrender.com/Login' />
-                )
-              }
-            />
-            <Route
-              exact
-              path='https://harrycrosby.onrender.com/Login'
-              element={<LoginPage />}
-            />
-            <Route
-              exact
-              path='https://harrycrosby.onrender.com/Register'
-              element={<RegisterPage />}
-            />
-            <Route
-              exact
-              path='https://harrycrosby.onrender.com/addImages'
-              element={
-                isAuth ? (
-                  <AddImagesPage />
-                ) : (
-                  <Navigate to='https://harrycrosby.onrender.com/' />
-                )
-              }
-            />
+          <Route exact path='/' element={<Layout />}>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/Gallery' element={<GalleryPage />} />
+            <Route exact path='/Contact' element={<ContactPage />} />
+            <Route exact path='/Animation' element={<AnimationPage />} />
+            <Route exact path='/Login' element={<LoginPage />} />
+            <Route exact path='/Register' element={<RegisterPage />} />
           </Route>
         </Routes>
         <Footer />
