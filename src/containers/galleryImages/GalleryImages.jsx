@@ -82,9 +82,9 @@ const GalleryImages = () => {
     return (
       <>
         <Titles />
-        {images.map(({ _id, imagePath }) => (
-          <div key={_id} className='gallery__image'>
-            <Image imagePath={imagePath} _id={_id} />
+        {images.forEach(image => (
+          <div key={image._id} className='gallery__image'>
+            <Image imagePath={image.imagePath} _id={image._id} />
           </div>
         ))}
       </>
@@ -92,3 +92,11 @@ const GalleryImages = () => {
   } else return <div>no Images found</div>;
 };
 export default GalleryImages;
+
+// {
+//   images.map(({ _id, imagePath }) => (
+//     <div key={_id} className='gallery__image'>
+//       <Image imagePath={imagePath} _id={_id} />
+//     </div>
+//   ));
+// }
