@@ -2,7 +2,6 @@
   "name": "crosby_photography",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/build",
   "dependencies": {
     "@cloudinary/react": "^1.11.0",
     "@cloudinary/url-gen": "^1.9.1",

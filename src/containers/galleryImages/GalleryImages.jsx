@@ -16,6 +16,7 @@ const GalleryImages = () => {
   const dispatch = useDispatch();
   const [genre, setGenre] = useState("all");
   const genres = ['all', 'birds', 'people', 'misc'];
+  console.log(images);
   const getimages = async () => {
     try {
       await axios.post(IMAGES_URL, { genre: genre }).then((res) => {

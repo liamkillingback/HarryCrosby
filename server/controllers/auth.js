@@ -62,6 +62,10 @@ export const get_images = async (req, res) => {
   }
   
 };
+export const getall = async (req, res) => {
+  const image = await Image.find();
+  res.status(200).json(image);
+}
 
 export const add_images = (req, res) => {
   const image = new Image({

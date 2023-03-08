@@ -24,7 +24,6 @@ const authSlice = createSlice({
       state.images = action.payload.images;
     },
   },
-  devTools: false
 });
 
 export const { setLogin, setLogout, setImages } =
